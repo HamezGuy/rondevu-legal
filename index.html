@@ -3,61 +3,255 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rondevu Legal Documents</title>
+    <title>Rondevu - Discover Live Events Near You</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            max-width: 600px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: #f5f5f5;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
         }
+        
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        .app-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+        
+        .app-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: white;
+            color: #764ba2;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1em;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .app-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        .features {
+            background: white;
+            padding: 80px 20px;
+        }
+        
         .container {
-            background-color: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #764ba2;
+            margin-bottom: 50px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .feature {
             text-align: center;
         }
-        h1 {
-            color: #FFD700;
+        
+        .feature-icon {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        
+        .feature h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .contact {
+            background: #f8f9fa;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .contact h2 {
+            font-size: 2.5em;
+            color: #764ba2;
             margin-bottom: 30px;
         }
-        .links {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
+        
+        .contact-info {
+            max-width: 600px;
+            margin: 0 auto;
         }
-        a {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: #FFD700;
-            color: #000;
+        
+        .contact-box {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .contact-email {
+            font-size: 1.5em;
+            color: #667eea;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
+            font-weight: bold;
+        }
+        
+        .contact-email:hover {
+            color: #764ba2;
+        }
+        
+        .support-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .support-link {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
             transition: all 0.3s;
         }
-        a:hover {
-            background-color: #FFC700;
+        
+        .support-link:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+            .hero p {
+                font-size: 1.2em;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Rondevu Legal Documents</h1>
-        <div class="links">
+    <div class="hero">
+        <h1>Rondevu</h1>
+        <p>Discover Live Events Near You</p>
+        <div class="app-buttons">
+            <a href="#" class="app-button">Download for iPhone</a>
+            <a href="#" class="app-button">For Event Organizers</a>
+        </div>
+    </div>
+    
+    <div class="features">
+        <div class="container">
+            <h2>Why Rondevu?</h2>
+            <div class="feature-grid">
+                <div class="feature">
+                    <div class="feature-icon">📍</div>
+                    <h3>Discover Nearby</h3>
+                    <p>Find amazing events happening right in your neighborhood with location-based discovery.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎫</div>
+                    <h3>Easy Ticketing</h3>
+                    <p>Purchase tickets instantly and store them securely in the app. No printing required.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎤</div>
+                    <h3>Follow Artists</h3>
+                    <p>Stay updated with your favorite artists, venues, and organizers. Never miss an event.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="contact" id="contact">
+        <div class="container">
+            <h2>Contact & Support</h2>
+            <div class="contact-info">
+                <div class="contact-box">
+                    <h3>Need Help?</h3>
+                    <p style="margin: 20px 0;">Our support team is here to assist you with any questions about the app, events, or ticketing.</p>
+                    <a href="mailto:jgui@rondevuevents.com" class="contact-email">jgui@rondevuevents.com</a>
+                    <p style="margin-top: 20px; color: #666;">We typically respond within 24-48 hours</p>
+                </div>
+                <div class="support-links">
+                    <a href="support.html" class="support-link">FAQ & Help Center</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="footer-links">
             <a href="privacy-policy.html">Privacy Policy</a>
             <a href="terms-of-service.html">Terms of Service</a>
+            <a href="support.html">Support</a>
         </div>
+        <p>&copy; 2024 Rondevu Events. All rights reserved.</p>
     </div>
 </body>
 </html>
